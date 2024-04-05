@@ -1,0 +1,92 @@
+{
+  "name": "@vue-2/t-component-library",
+  "version": "0.1.0",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "unpkg": "lib/library.min.js",
+  "files": [
+    "lib",
+    "types/*.d.ts"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "build:style": "sass --no-charset ./src/assets/styles/index.scss > lib/library.css && cleancss -o lib/library.min.css lib/library.css",
+    "build:types": "tsc --build tsconfigtypes.json",
+    "build:lib": "rimraf lib && cross-env NODE_ENV=production rollup --config rollup.config.js --bundleConfigAsCjs",
+    "build": "npm run build:lib && npm run build:style && npm run build:types"
+  },
+  "dependencies": {
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-typescript": "^7.24.1",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-url": "^8.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "clean-css-cli": "^5.6.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "minimist": "^1.2.8",
+    "rimraf": "^5.0.5",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-vue": "^5.1.9",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "typescript": "~4.5.5",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.stdev.ru/repository/npm-js-local/"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/typescript/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ]
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

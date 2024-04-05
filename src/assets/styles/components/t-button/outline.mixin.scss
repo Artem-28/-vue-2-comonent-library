@@ -1,0 +1,23 @@
+.t-button--outline {
+  color: $primary-text-color;
+  padding: 10px;
+  border: 2px solid $secondary-accept;
+
+  &:hover {
+    color: $primary-text-color;
+    border-color: $primary-accept;
+  }
+  &:active {
+    background-color: $dark;
+  }
+}
+
+.t-button--outline.t-button--disable {
+  &:hover {
+    color: $primary-text-color-50;
+    border-color: $secondary-accept;
+  }
+  &:active {
+    background-color: inherit;
+  }
+}

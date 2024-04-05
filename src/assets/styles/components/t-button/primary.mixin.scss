@@ -1,0 +1,23 @@
+.t-button--primary {
+  background-color: $primary;
+  &:hover {
+    color: $primary-text-color;
+    border-color: $primary-accept;
+  }
+  &:active {
+    background-color: $primary-accept;
+    border-color: $primary-accept;
+  }
+}
+.t-button--primary.t-button--disable {
+  background-color: $primary-40;
+  color: $primary-text-color-50;
+  &:hover {
+    color: $primary-text-color-50;
+    border-color: $secondary-accept;
+  }
+  &:active {
+    background-color: $primary-40;
+    border-color: $secondary-accept;
+  }
+}

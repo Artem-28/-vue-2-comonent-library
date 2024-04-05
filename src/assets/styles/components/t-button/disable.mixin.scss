@@ -1,0 +1,10 @@
+.t-button--disable {
+  cursor: not-allowed;
+  color: $primary-text-color-50;
+  &:hover {
+    color: $primary-text-color-50;
+  }
+  &:active {
+    color: $primary-text-color-50;
+  }
+}

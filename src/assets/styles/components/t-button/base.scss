@@ -1,0 +1,21 @@
+.t-button {
+  display: inline-flex;
+  gap: 8px;
+  max-height: 48px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 12px;
+  color: $primary-text-color;
+  background-color: inherit;
+  border-radius: 12px;
+  transition: all 0.2s;
+  &__label {
+    line-height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  &:hover {
+    color: $primary-accept;
+  }
+}
